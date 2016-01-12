@@ -17,7 +17,7 @@ import { polymorphic } from 'redux-polymorphic'
 import list from './reduers/list'
 
 const reducer = combineReducers({
-  todo: polymorphic(list, 'proposed', 'scheduled', 'active', 'complete')
+  list: polymorphic(list, 'proposed', 'scheduled', 'active', 'complete')
 })
 ```
 
@@ -52,7 +52,7 @@ class TodoListComponent extends Component {
 
 ListComponent = connect(
   (state, { as }) => ({
-    list: state.todo[as].list
+    list: state.list[as]
   }),
   (dispatch, { as }) => ({
     ...bindPolymorphicActionCreators({ add, remove }, dispatch, as)
