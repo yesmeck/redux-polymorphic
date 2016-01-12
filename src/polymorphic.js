@@ -6,5 +6,5 @@ export defualt function polymorphic(reducer, ...names) {
       }
       return reducer(state[name], action);
     }
-  }))
+  }), {})
 }

@@ -24,7 +24,7 @@ const reducer = combineReducers({
 **STEP 2:**
 ```javascript
 import React, { Component, PropTypes } from 'react';
-import { bindPolymorphicActionCreators } from 'multireducer';
+import { bindPolymorphicActionCreators } from 'redux-polymorphic';
 import { add, remove } from './actions/todo';
 
 class TodoListComponent extends Component {
