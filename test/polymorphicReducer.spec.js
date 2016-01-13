@@ -20,7 +20,10 @@ const mockReducer = (state = initialState, action = {}) => {
 
 describe('polymorphicReducer', () => {
   it('create a polymorphic reducer', () => {
-    const reducer = polymorphicReducer(mockReducer, 'tom', 'jerry')
+    const reducer = polymorphicReducer({
+      tom: mockReducer,
+      jerry: mockReducer
+    })
     const action = { type: INCREMENT, [key]: 'tom' }
     expect(reducer(undefined, action)).toEqual({ tom: 1, jerry: 0 })
   })

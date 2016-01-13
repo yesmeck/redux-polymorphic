@@ -17,7 +17,12 @@ import { polymorphicReducer } from 'redux-polymorphic'
 import list from './reduers/list'
 
 const reducer = combineReducers({
-  list: polymorphicReducer(list, 'proposed', 'scheduled', 'active', 'complete')
+  list: polymorphicReducer({
+    proposed: list,
+    scheduled: list,
+    active: list,
+    complete: list
+  })
 })
 ```
 

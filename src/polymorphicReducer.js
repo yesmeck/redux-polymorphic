@@ -1,18 +1,17 @@
 import key from './key'
+import mapValues from './mapValues';
 
-export default function polymorphicReducer(reducer, ...names) {
-  const initialState = names.reduce((acc, name) => ({
-    ...acc,
-    [name]: reducer(undefined, {})
-  }), {})
+export default function polymorphicReducer(reducers) {
+  const initialState = mapValues(reducers, reducer => reducer(undefined, {}))
 
   return (state = initialState, action) => {
     if (action) {
-      const name = action[key];
-      if (name) {
+      const reducerKey = action[key];
+      const reducer = reducers[reducerKey];
+      if (reducer) {
         return {
           ...state,
-          [name]: reducer(state[name], action)
+          [reducerKey]: reducer(state[reducerKey], action)
         }
       }
     }
