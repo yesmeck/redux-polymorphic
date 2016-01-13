@@ -15,7 +15,7 @@
     "test:watch": "npm test -- --watch",
     "build": "npm run build:lib",
     "build:lib": "babel src --out-dir lib",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm test && npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
