@@ -13,11 +13,11 @@ npm i --save redux-polymorphic
 **STEP 1:**
 
 ```javascript
-import { polymorphic } from 'redux-polymorphic'
+import { polymorphicReducer } from 'redux-polymorphic'
 import list from './reduers/list'
 
 const reducer = combineReducers({
-  list: polymorphic(list, 'proposed', 'scheduled', 'active', 'complete')
+  list: polymorphicReducer(list, 'proposed', 'scheduled', 'active', 'complete')
 })
 ```
 
