@@ -1,3 +1,3 @@
 export bindPolymorphicActionCreators from './bindPolymorphicActionCreators'
 export polymorphicDispatch from './polymorphicDispatch'
-export polymorphicReducer form './polymorphicReducer'
+export polymorphicReducer from './polymorphicReducer'
