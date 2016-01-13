@@ -1,5 +1,5 @@
 import expect from 'expect';
-import polymorphicDispatch from '../src/polymorphicDispatch'
+import { polymorphicDispatch } from '../src'
 import key from '../src/key';
 
 const INCREMENT = 'INCREMENT'

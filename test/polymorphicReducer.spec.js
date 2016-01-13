@@ -1,5 +1,5 @@
 import expect from 'expect';
-import polymorphicReducer from '../src/polymorphicReducer'
+import { polymorphicReducer } from '../src'
 import key from '../src/key';
 
 const INCREMENT = 'INCREMENT'

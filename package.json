@@ -40,5 +40,8 @@
     "expect": "^1.13.4",
     "mocha": "^2.3.4",
     "rimraf": "^2.5.0"
+  },
+  "peerDependencies": {
+    "redux": "^2.0.0 || ^3.0.0"
   }
 }
