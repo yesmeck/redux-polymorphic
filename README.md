@@ -26,7 +26,7 @@ const reducer = combineReducers({
 import React, { Component, PropTypes } from 'react'
 import { bindPolymorphicActionCreators } from 'redux-polymorphic'
 import { connect } from 'react-redux'
-import { add, remove } from './actions/todo'
+import { add, remove } from './actions/list'
 
 class TodoListComponent extends Component {
   static propTypes = {
@@ -76,4 +76,13 @@ render() {
     </div>
   )
 }
+```
+
+### Manually dispatch
+
+```javascript
+import { polymorphicDispatch } from 'redux-polymorphic'
+import { add, remove } from './actions/list'
+
+polymorphicDispatch(dispatch, 'tom')(add)
 ```

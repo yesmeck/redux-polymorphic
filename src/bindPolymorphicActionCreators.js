@@ -1,18 +1,7 @@
+import polymorphicDisptch from './polymorphicDispatch'
+import { bindActionCreators } from 'redux';
+
 function bindPolymorphicActionCreators(actionCreators, dispatch, as) {
-  const polymorphicDisptch = (originalDispatch) => {
-    return (action) => ({ ...action, key: as })
-  }
-
-  return mapValues(actionCreators, (actionCreator) => {
-    return (..args) => {
-      let action = actionCreator(..args)
-
-      if (typeof action === 'function') {
-        action = (disptch, getState) => {
-          action(polymorphicDisptch(dispatch), getState)
-        }
-      }
-      polymorphicDisptch(dispatch)(action)
-    }
-  })
+  const warappedDispatch = polymorphicDisptch(dispatch, as)
+  return bindActionCreators(actionCreators, warappedDispatch)
 }
