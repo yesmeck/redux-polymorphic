@@ -10,16 +10,18 @@
     "src"
   ],
   "scripts": {
+    "clean": "rimraf lib",
     "test": "mocha --compilers js:babel-register --recursive",
     "test:watch": "npm test -- --watch",
     "build": "npm run build:lib",
-    "build:lib": "babel src --out-dir lib"
+    "build:lib": "babel src --out-dir lib",
+    "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yesmeck/redux-polymorphic.git"
   },
-   "keywords": [
+  "keywords": [
     "redux",
     "reducer",
     "state"
@@ -36,6 +38,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.3.13",
     "expect": "^1.13.4",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "rimraf": "^2.5.0"
   }
 }
