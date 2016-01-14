@@ -1,14 +1,14 @@
 import key from './key'
 
 export default function polymorphicDispatch(disptch, as) {
-  return (action) => {
+  const wrappedDispatch = (action) => {
     if (typeof action === 'function') {
-      action = (disptch, getState) => {
-        action(polymorphicDispatch(disptch, as), getState)
-      }
+      action = (_, getState) => action(wrappedDispatch, getState)
     } else if (typeof action === 'object') {
       action[key] = as
     }
     return disptch(action)
   }
+
+  return wrappedDispatch;
 }
