@@ -1,6 +1,6 @@
 {
   "name": "redux-polymorphic",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "Another attempt to reuse your reduers, inspired from [multireducer](https://github.com/erikras/multireducer)",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
