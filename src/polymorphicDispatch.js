@@ -1,6 +1,6 @@
 import key from './key'
 
-export default function polymorphicDispatch(disptch, as) {
+export default function polymorphicDispatch(dispatch, as) {
   const wrappedDispatch = (action) => {
     let wrappedAction
     if (typeof action === 'function') {
@@ -8,7 +8,7 @@ export default function polymorphicDispatch(disptch, as) {
     } else if (typeof action === 'object') {
       wrappedAction = { ...action, [key]: as }
     }
-    return disptch(wrappedAction)
+    return dispatch(wrappedAction)
   }
 
   return wrappedDispatch;
