@@ -13,6 +13,8 @@ export default function polymorphicReducer(reducers) {
           ...state,
           [reducerKey]: reducer(state[reducerKey], action)
         }
+      } else {
+        return mapValues(reducers, (reducer, key) => reducer(state[key], action))
       }
     }
     return state;

@@ -27,4 +27,13 @@ describe('polymorphicReducer', () => {
     const action = { type: INCREMENT, [key]: 'tom' }
     expect(reducer(undefined, action)).toEqual({ tom: 1, jerry: 0 })
   })
+
+  it('handle action without a key', () => {
+     const reducer = polymorphicReducer({
+      tom: mockReducer,
+      jerry: mockReducer
+    })
+    const action = { type: INCREMENT }
+    expect(reducer(undefined, action)).toEqual({ tom: 1, jerry: 1 })
+  })
 })
