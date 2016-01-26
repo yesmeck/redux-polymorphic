@@ -1,31 +1,27 @@
 import expect from 'expect';
 import { polymorphicDispatch } from '../src'
 import key from '../src/key';
-
-const INCREMENT = 'INCREMENT'
+import { INCREMENT, increment } from './helpers/counter'
 
 const spyDispatch = expect.createSpy().andCall((action) => action)
 
-const disptch = polymorphicDispatch(spyDispatch, 'tom')
-
+const disptch = polymorphicDispatch(spyDispatch, 'apple')
 
 describe('polymorphicDisptch', () => {
   it('create a polymorphic disptch', () => {
-    const action = { type: INCREMENT }
-
-    disptch(action)
+    disptch(increment())
 
     expect(
       spyDispatch.calls[0].arguments
     ).toEqual([
-      { type: INCREMENT, [key]: 'tom' }
+      { type: INCREMENT, [key]: 'apple' }
     ])
   })
 
   it('handle thunk action', () => {
     const thunkAction = () => {
       return (disptch) => {
-        disptch({ type: INCREMENT })
+        disptch(increment)
       }
     }
 
@@ -34,7 +30,7 @@ describe('polymorphicDisptch', () => {
     expect(
       spyDispatch.calls[0].arguments
     ).toEqual([
-      { type: INCREMENT, [key]: 'tom' }
+      { type: INCREMENT, [key]: 'apple' }
     ])
   })
 })
