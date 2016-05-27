@@ -3,7 +3,7 @@ import { polymorphicReducer } from '../src'
 import key from '../src/key';
 import counter, { INCREMENT, DECREMENT, increment, decrement } from './helpers/counter'
 
-describe('polymorphicReducer', () => {
+describe('plainReducer', () => {
   it('create a polymorphic reducer', () => {
     const reducer = polymorphicReducer({
       apple: counter,
