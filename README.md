@@ -14,6 +14,8 @@ npm i --save redux-polymorphic
 
 ```javascript
 import { polymorphicReducer } from 'redux-polymorphic'
+// In case you are using Immutable.js, you can:
+// import { polymorphicReducer } from 'redux-polymorphic/immutable'
 import list from './reduers/list'
 
 const reducer = combineReducers({
