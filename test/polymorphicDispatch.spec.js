@@ -14,7 +14,7 @@ describe('polymorphicDisptch', () => {
     expect(
       spyDispatch.calls[0].arguments
     ).toEqual([
-      { type: INCREMENT, [key]: 'apple' }
+      { type: INCREMENT, meta: { [key]: 'apple' } }
     ])
   })
 
@@ -30,7 +30,7 @@ describe('polymorphicDisptch', () => {
     expect(
       spyDispatch.calls[0].arguments
     ).toEqual([
-      { type: INCREMENT, [key]: 'apple' }
+      { type: INCREMENT, meta: { [key]: 'apple' } }
     ])
   })
 })

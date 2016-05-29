@@ -13,6 +13,6 @@ describe('bindPolymorphicActionCreators',  () => {
 
     const action = increment()
 
-    expect(boundActionCreators.increment()).toEqual({...action, [key]: 'apple'})
+    expect(boundActionCreators.increment()).toEqual({...action, meta: { [key]: 'apple'} })
   })
 })

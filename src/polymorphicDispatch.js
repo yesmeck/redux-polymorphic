@@ -6,7 +6,13 @@ export default function polymorphicDispatch(dispatch, as) {
     if (typeof action === 'function') {
       wrappedAction = (_, getState) => action(wrappedDispatch, getState)
     } else if (typeof action === 'object') {
-      wrappedAction = { ...action, [key]: as }
+      wrappedAction = {
+        ...action,
+        meta: {
+          ...action.meta,
+          [key]: as,
+        }
+      }
     }
     return dispatch(wrappedAction)
   }

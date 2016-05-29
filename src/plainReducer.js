@@ -6,7 +6,7 @@ export default function polymorphicReducer(reducers) {
 
   return (state = initialState, action) => {
     if (action) {
-      const reducerKey = action[key];
+      const reducerKey = action.meta ?  action.meta[key] : null;
       const reducer = reducers[reducerKey];
       if (reducer) {
         return {

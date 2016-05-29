@@ -11,8 +11,10 @@ describe('immutableReducer', () => {
     })
     const action = {
       type: ADD,
-      [key]: 'meck',
-      payload: 'Buy milk'
+      payload: 'Buy milk',
+      meta: {
+        [key]: 'meck',
+      },
     }
 
     expect(reducer(undefined, action).toJS()).toEqual({

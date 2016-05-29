@@ -9,7 +9,7 @@ describe('plainReducer', () => {
       apple: counter,
       orange: counter
     })
-    const action = { type: INCREMENT, [key]: 'apple' }
+    const action = { type: INCREMENT, meta: { [key]: 'apple' } }
     expect(reducer(undefined, action)).toEqual({ apple: 1, orange: 0 })
   })
 
