@@ -31,7 +31,7 @@ const reducer = combineReducers({
 **STEP 2:**
 ```javascript
 import React, { Component, PropTypes } from 'react'
-import { bindPolymorphicActionCreators } from 'redux-polymorphic'
+import { bindActionCreators } from 'redux-polymorphic'
 import { connect } from 'react-redux'
 import { add, remove } from './actions/list'
 
@@ -61,9 +61,7 @@ ListComponent = connect(
   (state, { as }) => ({
     list: state.list[as]
   }),
-  (dispatch, { as }) => ({
-    ...bindPolymorphicActionCreators({ add, remove }, dispatch, as)
-  })
+  (dispatch, { as }) => bindActionCreators({ add, remove }, dispatch, as)
 )(ListComponent)
 
 export default ListComponent

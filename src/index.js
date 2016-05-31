@@ -1,3 +1,3 @@
 export polymorphicReducer from './plainReducer'
-export bindPolymorphicActionCreators from './bindPolymorphicActionCreators.js'
+export bindActionCreators from './bindActionCreators.js'
 export polymorphicDispatch from './polymorphicDispatch'

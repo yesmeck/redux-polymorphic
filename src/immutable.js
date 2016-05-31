@@ -1,3 +1,3 @@
 export polymorphicReducer from './immutableReducer'
-export bindPolymorphicActionCreators from './bindPolymorphicActionCreators'
+export bindActionCreators from './bindActionCreators'
 export polymorphicDispatch from './polymorphicDispatch'
