@@ -1,5 +1,7 @@
 # Redux Polymorphic
 
+**Deprecated, see https://github.com/erikras/multireducer**
+
 Another attempt to reuse your reduers, inspired from [multireducer](https://github.com/erikras/multireducer)
 
 ## Installation
